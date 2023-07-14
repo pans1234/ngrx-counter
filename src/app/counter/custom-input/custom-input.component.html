@@ -1,0 +1,9 @@
+<div class="input-group mb-3">
+    <div class="my-3">{{userName}} </div>
+    <input type="text" class="form-control" placeholder="Enter a Value" [(ngModel)]="value">
+    <button class="btn btn-outline-primary" type="button" id="button-addon2" (click)="OnAdd()" (keyup.enter)="OnAdd()">Add</button>
+</div>
+
+<div>
+    <button class="btn btn-info" (click)="onChnageUserName()">Change Text</button>
+</div>

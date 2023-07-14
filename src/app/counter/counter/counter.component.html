@@ -1,13 +1,24 @@
 <!-- !Parent Comment -->
+<!-- !Commented Portion are the input and iutput concepyt of angular -->
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <div class="my-3">
-                <app-output [counter]="counter"></app-output>
+                <!-- <app-output [counter]="counter"></app-output> -->
+                <app-output ></app-output>
+
             </div>
 
             <div class="my-3">
-                <app-buttons (increment)="OnIncrement()" (decrement)="OnDecrement()" (reset)="OnReset()"></app-buttons>
+                <!-- <app-buttons (increment)="OnIncrement()" (decrement)="OnDecrement()" (reset)="OnReset()"></app-buttons> -->
+                <app-buttons></app-buttons>
+
+            </div>
+
+
+            <div class="my-3">
+                <app-custom-input></app-custom-input>
+
             </div>
         </div>
     </div>
