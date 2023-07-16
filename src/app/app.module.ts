@@ -9,13 +9,15 @@ import { ButtonsComponent } from './counter/buttons/buttons.component';
 import { StoreModule } from '@ngrx/store';
 import { counterReducer } from './counter/counter.reducer';
 import { CustomInputComponent } from './counter/custom-input/custom-input.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PostlistComponent } from './posts/postlist/postlist.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { PostReducer } from './posts/postlist/state/post.reducer';
 import { appReducer } from './store/App.store';
+import { AddPostComponent } from './posts/add-post/add-post.component';
+import { EditPostComponent } from './posts/edit-post/edit-post.component';
 
 @NgModule({
   declarations: [
@@ -26,12 +28,15 @@ import { appReducer } from './store/App.store';
     CustomInputComponent,
     HomeComponent,
     HeaderComponent,
-    PostlistComponent
+    PostlistComponent,
+    AddPostComponent,
+    EditPostComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     // ! You havre to update each time whenver a store is created for a particular Module
     StoreModule.forRoot({counterModule : counterReducer, postModule : PostReducer}),
     // StoreModule.forRoot(appReducer),

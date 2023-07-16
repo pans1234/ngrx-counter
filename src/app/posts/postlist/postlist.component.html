@@ -1,17 +1,31 @@
 <div class="row">
-    <div class="col-md-12">
-        <h3>Course Lists</h3>
+    <div class="col-md-8">
+        <h3>Posts Lists</h3>
+        <div>
+            <a [routerLink]="['/post/add']" class="btn btn-success">Add Post</a>
+        </div>
         <table class="table table-stripped">
             <tr>
                 <th>ID</th>
                 <th>TITLE</th>
                 <th>DESCRIPTION</th>
+                <th>Edit</th>
+                <th>Del</th>
             </tr>  
             <tr *ngFor="let data of posts | async">
                 <td>{{data.id}}</td>
                 <td>{{data.title}}</td>
                 <td>{{data.description}}</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" [routerLink]="[ 'edit' , data.id]">Update</a>
+                </td>
+                <td>
+                    <a class="btn btn-danger btn-sm" (click)="onDeletePost(data.id)">Delete</a>
+                </td>
             </tr>          
         </table>
+    </div>
+    <div class="col-md-4">
+        <router-outlet></router-outlet>
     </div>
 </div>

@@ -1,0 +1,25 @@
+<div class="row my-3">
+    <div class="col-md-12">
+        <h3>Update Post</h3>
+        <hr/>
+        <form [formGroup]="updateForm">
+            <div class="mb-3">
+                <label>Title</label>
+                <input type="text" class="form-control" formControlName="title"/>
+                <div><span style="color: red;">{{showTitle()}}</span></div>
+            </div>
+
+            <div class="mb-3">
+                <label>Description</label>
+                <textarea class="form-control" formControlName="description"></textarea>
+                <div><span style="color : red">{{showDescriptionError()}}</span></div>
+            </div>
+
+            <div class="my-3">
+                <button class="btn btn-outline-primary" type="submit" (click)="onUpdatePost()" [disabled]="!updateForm.valid">Update Post</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+

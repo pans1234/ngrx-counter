@@ -6,8 +6,14 @@ export const getPostListSelectors = createFeatureSelector<PostStore>('postModule
 
 // ? make the selectors for PostStore
 export const getPosts = createSelector(getPostListSelectors , (store) =>{
-    console.log('-'.repeat(200));
-    console.log(store);
-    
+    // console.log('-'.repeat(200));
+    console.log(store);  
     return store.posts
-} )
+})
+
+export const getPostById = createSelector(getPostListSelectors , (store : any , propsId : any) =>{
+    // console.log(store.posts[0]);    
+    // return store.posts;
+    return store.posts.find((post: { id: any; })=>post.id === propsId.id);
+
+})
