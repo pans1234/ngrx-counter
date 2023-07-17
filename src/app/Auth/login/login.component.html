@@ -1,0 +1,19 @@
+<form class="form my-5 p-4" [formGroup]="loginForm">
+    <p class="title">Login </p>
+    <p class="message">Signin now and get full access to our app. </p> 
+            
+    <label>
+        <input required="" placeholder="" type="email" class="input" formControlName="email">
+        <span>Email</span>
+       <div><span style="color: red">{{showEmail()}}</span></div>
+    </label> 
+        
+    <label>
+        <input required="" placeholder="" type="password" class="input" formControlName="password">
+        <span>Password</span>
+       <div><span style="color: red">{{showPassword()}}</span></div>
+
+    </label>
+    <button class="submit" [disabled]="!loginForm.valid">Submit</button>
+    <p class="signin">Already have an acount ? <a href="#">Signup</a> </p>
+</form>

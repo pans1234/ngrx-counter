@@ -2,7 +2,8 @@ import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { PostStore } from "./post.store";
 
 // TODO : Featuire Selector bana h kis type ka aur kiska
-export const getPostListSelectors = createFeatureSelector<PostStore>('postModule')
+export const POST_ACTION_NAME = 'postModule'
+export const getPostListSelectors = createFeatureSelector<PostStore>(POST_ACTION_NAME)
 
 // ? make the selectors for PostStore
 export const getPosts = createSelector(getPostListSelectors , (store) =>{
